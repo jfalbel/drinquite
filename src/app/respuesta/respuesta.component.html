@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-2">
+    <label for="correcta">Correcta</label>
+    <input type="radio" class="form-control" id="correcta"
+           formControlName="correcta"
+           [(ngModel)]="respuesta.correcta" name="correcta" value="{{respuesta.id}}">
+  </div>
+  <div class="col-md-10">
+    <label >Texto de la respuesta {{i+1}}</label>
+    <input type="text" minlength="4" class="form-control"
+           required
+           formControlName="texto"
+           [(ngModel)]="respuesta.texto" name="texto_{{respuesta.id}}">
+  </div>
+</div>
+{{respuesta | json}}
+<div class="form-group form-inline">
+
+
+</div>

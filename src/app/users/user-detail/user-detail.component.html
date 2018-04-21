@@ -1,0 +1,24 @@
+<div class="card bg-primary text-white" *ngIf="user">
+    <h2 class="card-header">Ficha de {{ user.name | uppercase }}</h2>
+    <table class="card-body table text-right">
+
+        <tr>
+          <td>Identificador:</td>
+          <td>{{ user.id }}</td>
+        </tr>
+        <tr>
+          <td>Nombre:</td>
+          <td><input [(ngModel)]="user.name" placeholder="name"></td>
+        </tr>
+        <tr>
+          <td>Nombre de usuario:</td>
+          <td>{{ user.username }}</td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td>{{ user.email }}</td>
+        </tr>
+
+    </table>
+<button class="card-footer bg-secondary btn" (click)="goBack()">Volver!!</button>
+</div>

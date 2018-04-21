@@ -1,0 +1,59 @@
+<div class="card">
+  <div class="card-header">
+    Nueva pregunta
+  </div>
+  <form [formGroup]="preguntaForm" (submit)="onSubmit(pregunta);">
+    <div class="card-body">
+      <div class="form-group">
+        <label for="titulo">Título</label>
+        <input type="text" class="form-control" id="titulo"
+               required
+               formControlName="titulo">
+      </div>
+      <div class="form-group">
+        <label for="texto">Texto de la pregunta</label>
+        <input type="text" minlength="4" class="form-control" id="texto"
+               required
+               formControlName="texto"
+              >
+      </div>
+
+      <div>
+        {{nrespuestas}} ->
+        <button *ngIf="nrespuestas<4" (click)="addRespuesta2()" type="button" value="añadir">Añadir respuesta</button>
+        <div formArrayName="respuestas">
+          <div *ngFor="let respuesta of respuestas.controls; let i=index" [formGroupName]="i">
+
+          <div class="row">
+            <div class="col-md-2">
+              <label for="correcta">Correcta</label>
+              <input type="radio" class="form-control" id="correcta"
+                     formControlName="correcta"
+                     name="correcta" value="{{respuesta.id}}">
+            </div>
+            <div class="col-md-10">
+              <label >Texto de la respuesta {{i+1}}</label>
+              <input type="text" minlength="4" class="form-control"
+                     required
+                     formControlName="texto"
+                     name="texto">
+            </div>
+          </div>
+          </div>
+          {{respuesta | json}}
+
+          <!-- <form-respuesta *ngFor="let respuesta of respuestas.controls; let i=index" [formGroupName]="i"></form-respuesta> -->
+        </div>
+
+      </div>
+
+
+
+    </div>
+    <div class="card-footer">
+      <button type="submit">Crear</button>
+    </div>
+  </form>
+</div>
+<pre>pregunta = {{ pregunta | json }}</pre>
+

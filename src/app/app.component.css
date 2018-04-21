@@ -1,0 +1,14 @@
+h1 {
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 300%;
+}
+
+.nav-fixed-bottom {
+    position:fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+

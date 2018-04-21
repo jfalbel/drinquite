@@ -1,0 +1,12 @@
+<div class="messages-frame" *ngIf="messageService.messages.length"
+style="">
+
+<h2>Mensajes de entrada</h2>
+<button class="btn btn-secondary" (click)="messageService.clear()">Limpiar Mensajes</button>
+
+  <div class="message-system col-md-2  alert alert-warning alert-dismissible" *ngFor='let message of messageService.messages'>
+    <div class="alert alert-heading"><b>System Message</b></div>
+    {{message}}
+  </div>
+
+</div>
